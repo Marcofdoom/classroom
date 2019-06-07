@@ -1,4 +1,4 @@
-package persistence.repository;
+package persistence.repository.trainer;
 
 public interface TrainerRepository {
 
@@ -6,7 +6,7 @@ public interface TrainerRepository {
 
 	String removeTrainer(String name);
 
-	String updateTrainerDetails(int classroomId);
+	String updateTrainerDetails(String name);
 
 	String returnTrainerDetails(int classroomId);
 }

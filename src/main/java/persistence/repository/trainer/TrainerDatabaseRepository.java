@@ -1,4 +1,4 @@
-package persistence.repository;
+package persistence.repository.trainer;
 
 import static javax.transaction.Transactional.TxType.REQUIRED;
 import static javax.transaction.Transactional.TxType.SUPPORTS;
@@ -24,22 +24,21 @@ public class TrainerDatabaseRepository implements TrainerRepository {
 
 	@Transactional(REQUIRED)
 	public String addTrainer(String name) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Transactional(REQUIRED)
 	public String removeTrainer(String name) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public String updateTrainerDetails(int classroomId) {
-		// TODO Auto-generated method stub
+	@Override
+	public String updateTrainerDetails(String name) {
 		return null;
 	}
 
 	public String returnTrainerDetails(int classroomId) {
 		return jsonUtil.getJSONForObject(entityManager.find(Trainer.class, classroomId));
 	}
+
 }
