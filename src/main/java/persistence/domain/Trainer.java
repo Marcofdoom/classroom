@@ -1,9 +1,14 @@
 package persistence.domain;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Trainer {
@@ -13,6 +18,9 @@ public class Trainer {
 	private int classroomID;
 
 	private String trainer;
+
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "trainer", cascade = CascadeType.ALL)
+	private Set<Trainee> trainees;
 
 	public Trainer() {
 
@@ -29,5 +37,9 @@ public class Trainer {
 
 	public String getTrainer() {
 		return trainer;
+	}
+
+	public Set<Trainee> getTrainees() {
+		return trainees;
 	}
 }

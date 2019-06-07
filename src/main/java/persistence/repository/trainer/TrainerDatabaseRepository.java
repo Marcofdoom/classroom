@@ -35,10 +35,10 @@ public class TrainerDatabaseRepository implements TrainerRepository {
 	public String removeTrainer(int classroomId) {
 		if (entityManager.contains(entityManager.find(Trainer.class, classroomId))) {
 			entityManager.remove(entityManager.find(Trainer.class, classroomId));
-			return "{\"message\": \"movie sucessfully deleted\"}";
+			return "{\"message\": \"trainer sucessfully deleted\"}";
 		}
 
-		return "{\"message\": \"Cant find movie\"}";
+		return "{\"message\": \"Cant find trainer\"}";
 	}
 
 	@Override
