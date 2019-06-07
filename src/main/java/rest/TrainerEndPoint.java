@@ -18,6 +18,6 @@ public class TrainerEndPoint {
 	@GET
 	@Produces({ "application/json" })
 	public String getTrainer(@PathParam("id") int classroomId) {
-		return null;
+		return trainerService.returnTrainerDetails(classroomId);
 	}
 }
