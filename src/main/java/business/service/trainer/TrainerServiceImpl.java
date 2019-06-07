@@ -14,11 +14,11 @@ public class TrainerServiceImpl implements TrainerService {
 	private JSONUtil util;
 
 	public String addTrainer(String jsonString) {
-		return null;
+		return trainerRepository.addTrainer(jsonString);
 	}
 
-	public String removeTrainer(String jsonString) {
-		return null;
+	public String removeTrainer(int classroomId) {
+		return trainerRepository.removeTrainer(classroomId);
 	}
 
 	public String updateTrainerDetails(int classroomId) {
@@ -27,5 +27,10 @@ public class TrainerServiceImpl implements TrainerService {
 
 	public String returnTrainerDetails(int classroomId) {
 		return trainerRepository.returnTrainerDetails(classroomId);
+	}
+
+	@Override
+	public String returnAllTrainerDetails() {
+		return trainerRepository.returnAllTrainerDetails();
 	}
 }

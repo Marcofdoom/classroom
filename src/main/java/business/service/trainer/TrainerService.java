@@ -4,9 +4,11 @@ public interface TrainerService {
 
 	String addTrainer(String jsonString);
 
-	String removeTrainer(String jsonString);
+	String removeTrainer(int classroomId);
 
 	String updateTrainerDetails(int classroomId);
 
 	String returnTrainerDetails(int classroomId);
+
+	String returnAllTrainerDetails();
 }

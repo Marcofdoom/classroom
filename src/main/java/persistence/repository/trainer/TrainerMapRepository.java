@@ -27,21 +27,13 @@ public class TrainerMapRepository implements TrainerRepository {
 		return "Trainer added";
 	}
 
-	public String removeTrainer(String name) {
-		
-		// A bit bad
-		int trainerId = -1;
-
+	@Override
+	public String removeTrainer(int classroomId) {
 		for (Map.Entry<Integer, Trainer> entry : trainerMap.entrySet()) {
-			if (entry.getValue().getTrainer().equalsIgnoreCase(name)) {
-				trainerId = entry.getValue().getClassroomID();
-				break;
+			if (entry.getKey() == classroomId) {
+				trainerMap.remove(classroomId);
+				return "Trainer removed";
 			}
-		}
-
-		if (trainerId != -1) {
-			trainerMap.remove(trainerMap);
-			return "Trainer removed";
 		}
 
 		return "No trainer exists";
@@ -57,7 +49,6 @@ public class TrainerMapRepository implements TrainerRepository {
 		}
 
 		return "Trainer id does not exist";
-
 	}
 
 	public String returnTrainerDetails(int classroomId) {
@@ -72,5 +63,10 @@ public class TrainerMapRepository implements TrainerRepository {
 
 	public Map<Integer, Trainer> getTrainerMap() {
 		return trainerMap;
+	}
+
+	@Override
+	public String returnAllTrainerDetails() {
+		return null;
 	}
 }

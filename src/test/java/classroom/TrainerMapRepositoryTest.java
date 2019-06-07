@@ -29,12 +29,12 @@ public class TrainerMapRepositoryTest {
 	@Test
 	public void removeSuccessTrainerTest() {
 		trainerMapRepository.addTrainer(Constants.TRAINER_ONE);
-		assertTrue(trainerMapRepository.removeTrainer("Marc").equalsIgnoreCase("Trainer removed"));
+		assertTrue(trainerMapRepository.removeTrainer(1).equalsIgnoreCase("Trainer removed"));
 	}
 
 	@Test
 	public void removeFailTrainerTest() {
-		assertTrue(trainerMapRepository.removeTrainer("Marc").equalsIgnoreCase("No trainer exists"));
+		assertTrue(trainerMapRepository.removeTrainer(1).equalsIgnoreCase("No trainer exists"));
 	}
 
 	@Test
