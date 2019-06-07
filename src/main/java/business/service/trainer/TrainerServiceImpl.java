@@ -1,8 +1,8 @@
-package business.service;
+package business.service.trainer;
 
 import javax.inject.Inject;
 
-import persistence.repository.TrainerRepository;
+import persistence.repository.trainer.TrainerRepository;
 import util.JSONUtil;
 
 public class TrainerServiceImpl implements TrainerService {
@@ -13,18 +13,15 @@ public class TrainerServiceImpl implements TrainerService {
 	@Inject
 	private JSONUtil util;
 
-	public String addTrainer(String name) {
-		// TODO Auto-generated method stub
+	public String addTrainer(String jsonString) {
 		return null;
 	}
 
-	public String removeTrainer(String name) {
-		// TODO Auto-generated method stub
+	public String removeTrainer(String jsonString) {
 		return null;
 	}
 
 	public String updateTrainerDetails(int classroomId) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
