@@ -29,8 +29,6 @@ public class TrainerServiceImpl implements TrainerService {
 	}
 
 	public String returnTrainerDetails(int classroomId) {
-		// TODO Auto-generated method stub
-		return null;
+		return trainerRepository.returnTrainerDetails(classroomId);
 	}
-
 }

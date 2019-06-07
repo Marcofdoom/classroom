@@ -9,6 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
+import persistence.domain.Trainer;
 import util.JSONUtil;
 
 @Transactional(SUPPORTS)
@@ -39,7 +40,6 @@ public class TrainerDatabaseRepository implements TrainerRepository {
 	}
 
 	public String returnTrainerDetails(int classroomId) {
-		// TODO Auto-generated method stub
-		return null;
+		return jsonUtil.getJSONForObject(entityManager.find(Trainer.class, classroomId));
 	}
 }
